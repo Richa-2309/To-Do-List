@@ -63,5 +63,5 @@ A simple RESTful Todo application built using **Java** and **Spring Boot**. This
 - Authentication using Spring Security & JWT
 
 ## Author
-
 Richa Kumari
+Thanks
