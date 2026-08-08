@@ -17,6 +17,10 @@ A simple RESTful Todo application built using **Java** and **Spring Boot**. This
 - Gradle
 - REST API
 - JSON
+- SQL
+- HTML
+- CSS
+- JAVASCRIPT
 
 ## API Endpoints
 
@@ -45,6 +49,14 @@ A simple RESTful Todo application built using **Java** and **Spring Boot**. This
 - `201 Created` – Todo created successfully
 - `404 Not Found` – Todo not found
 - `400 Bad Request` – Invalid request data
+- ## Future Improvements
+
+- Connect with MySQL
+- Add Spring Data JPA
+- Input Validation
+- Exception Handling
+- Swagger Documentation
+- Authentication using Spring Security & JWT
 
 ## How to Run
 
@@ -64,4 +76,4 @@ A simple RESTful Todo application built using **Java** and **Spring Boot**. This
 
 ## Author
 Richa Kumari
-Thanks
+
