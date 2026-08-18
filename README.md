@@ -1,6 +1,7 @@
 # Todo CRUD API
 
-A simple RESTful Todo application built using **Java** and **Spring Boot**. This project demonstrates basic CRUD (Create, Read, Update, Delete) operations on Todo items.
+A simple RESTful Todo application built using **Java** and **Spring Boot** . This project demonstrates basic CRUD (Create, Read, Update, Delete) operations on Todo items.
+learning other tech as well like Javascript, nodejs
 
 ## Features
 
