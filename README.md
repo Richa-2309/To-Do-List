@@ -77,4 +77,7 @@ learning other tech as well like Javascript, nodejs
 
 ## Author
 Richa Kumari
+Thanks
+
+
 
