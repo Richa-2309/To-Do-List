@@ -1,51 +1,123 @@
-function render() {
 
-  document.querySelector("#push").onclick = function () {    // onClick event on Add button.
+// Select required elements
+const addButton = document.querySelector("#push");
+const taskInput = document.querySelector("#taskInput");
+const tasksContainer = document.querySelector("#tasks");
+const taskLeft = document.querySelector("#taskLeft");
 
-    if (document.querySelector("#newtask input").value.length == 0) {      // checking if input field is empty.
-      alert("Please Enter a Task!");
-    } else {      //this will add task items to div elememt of id='tasks'.
 
-      document.querySelector("#tasks").innerHTML += `
-                  <div class="task">
-                      <span id="taskname"><input type='checkbox' id='checkbox' alt='Input field'>
-                          ${document.querySelector("#newtask input").value}
-                      </span>
-                      <button class="delete">
-                      <i class="fa-regular fa-trash-can fa-xl" style="color: #f75d02;"></i></button>
-                  </div>`;
+// ================= ADD TASK =================
 
-      let current_tasks = document.querySelectorAll(".delete");
-      const totalTask = document.getElementById("taskLeft");
-      for (let i = 0; i < current_tasks.length; i++) {        // delete tasks functionality.
+addButton.onclick = function () {
 
-        current_tasks[i].onclick = function () {
-          let current_tasks = document.querySelectorAll(".delete");
-          this.parentNode.remove();
-          totalTask.textContent = `${current_tasks.length - 1}`;
-        };
-      }
-      let task = document.querySelectorAll("#checkbox");
-      let taskList = task.length;
-      for (let i = 0; i < task.length; i++) {        // task checked/unchecked functionality.
+    // Get input value and remove extra spaces
+    const taskValue = taskInput.value.trim();
 
-        task[i].onclick = function () {
-          if (task[i].checked) { // checked
-            taskList = taskList - 1;
-            totalTask.textContent = `${taskList}`;
-            this.parentNode.style.textDecoration = "line-through";
-            task[i].setAttribute("checked", true);
-          } else {    // unchecked
-            taskList = taskList + 1;
-            totalTask.textContent = `${taskList}`;
-            this.parentNode.style.textDecoration = "none";
-            task[i].setAttribute("checked", false);
-          }
-        };
-      }
-      totalTask.textContent = `${current_tasks.length}`; // footer section > total task count.
-      document.querySelector("input").value = ""; // clearing input field.
+    // Check if input is empty
+    if (taskValue.length === 0) {
+        alert("Please Enter a Task!");
+        return;
     }
-  };
+
+
+    // Create a new task
+    tasksContainer.innerHTML += `
+        <div class="task">
+
+            <span class="taskname">
+
+                <input
+                    type="checkbox"
+                    class="checkbox"
+                >
+
+                ${taskValue}
+
+            </span>
+
+            <button class="delete" type="button">
+                <i
+                    class="fa-regular fa-trash-can fa-xl"
+                    style="color: #f75d02;"
+                ></i>
+            </button>
+
+        </div>
+    `;
+
+
+    // Clear input field
+    taskInput.value = "";
+
+
+    // Update task count
+    updateTaskCount();
+};
+
+
+// ================= TASK EVENTS =================
+
+// Event Delegation
+tasksContainer.addEventListener("click", function (event) {
+
+    // Find clicked delete button
+    const deleteButton = event.target.closest(".delete");
+
+    if (deleteButton) {
+
+        // Find the task containing the delete button
+        const task = deleteButton.closest(".task");
+
+        // Remove task
+        task.remove();
+
+        // Update count
+        updateTaskCount();
+
+        return;
+    }
+
+
+    // Find clicked checkbox
+    const checkbox = event.target.closest(".checkbox");
+
+    if (checkbox) {
+
+        // Find task name
+        const taskName = checkbox.closest(".taskname");
+
+        // Add/remove line-through
+        if (checkbox.checked) {
+            taskName.style.textDecoration = "line-through";
+        } else {
+            taskName.style.textDecoration = "none";
+        }
+
+        // Update count
+        updateTaskCount();
+    }
+
+});
+
+
+// ================= TASK COUNT =================
+
+function updateTaskCount() {
+
+    // Select all checkboxes
+    const checkboxes = document.querySelectorAll(".checkbox");
+
+    // Count unchecked tasks
+    let remainingTasks = 0;
+
+    checkboxes.forEach(function (checkbox) {
+
+        if (!checkbox.checked) {
+            remainingTasks++;
+        }
+
+    });
+
+    // Display remaining task count
+    taskLeft.textContent = remainingTasks;
 }
-render();
