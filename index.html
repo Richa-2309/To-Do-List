@@ -1,47 +1,92 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <link rel="styleSheet" href="index.css">
-    <script src="https://kit.fontawesome.com/301907f500.js" crossorigin="anonymous"></script>
+
+    <!-- Responsive Design -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ToDos</title>
+
+    <!-- Page Title -->
+    <title>To-Do List</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="index.css">
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/301907f500.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <div class="container">
-        <!-- header section -->
-        <header>
-            <p class="p">TO-DO-LIST
-                <i class="fa-regular fa-circle-check p" style="color: #f75d02"></i>
+
+    <main class="container">
+
+        <!-- ================= HEADER ================= -->
+        <header class="header">
+            <h1>
+                TO-DO LIST
+                <i class="fa-regular fa-circle-check" style="color: #f75d02;"></i>
+            </h1>
         </header>
+
         <hr>
-        <!-- input field section -->
-        <div id="newtask">
-            <input type="text" placeholder="Type your todo list"><i class="fa-solid fa-list-check"></i>
-            <button id="push">Add</button>
-        </div>
+
+        <!-- ================= ADD TASK ================= -->
+        <section class="task-input-section">
+
+            <div id="newtask">
+
+                <div class="input-wrapper">
+                    <input
+                        type="text"
+                        id="taskInput"
+                        placeholder="Type your todo..."
+                        autocomplete="off"
+                    >
+
+                    <i class="fa-solid fa-list-check"></i>
+                </div>
+
+                <button id="push" type="button">
+                    Add
+                </button>
+
+            </div>
+
+        </section>
+
         <hr>
-        <!-- tasks list -->
-        <div id="tasks"></div>
+
+        <!-- ================= TASK LIST ================= -->
+        <section class="tasks-section">
+
+            <h2>My Tasks</h2>
+
+            <div id="tasks">
+                <!-- Tasks will be added dynamically using JavaScript -->
+            </div>
+
+        </section>
+
         <hr>
-        <!-- footer section -->
+
+        <!-- ================= FOOTER ================= -->
         <footer id="footer">
-            <p id="taskLeft">0</p>
-            tasks left
+
+            <div class="task-count">
+                <span id="taskLeft">0</span>
+                <span>tasks left</span>
+            </div>
+
         </footer>
-    </div>
+
+    </main>
+
+    <!-- JavaScript -->
     <script src="index.js"></script>
-    <section>
-        <div>
-             <section>
-        <div>
-            
-        </div>
-    </section>
-        </div>
-    </section>
+
 </body>
 
 </html>
+
