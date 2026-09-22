@@ -110,11 +110,13 @@ function updateTaskCount() {
     // Count unchecked tasks
     let remainingTasks = 0;
 
-    checkboxes.forEach(function (checkbox) {
+    // checkboxes.forEach(function (checkbox) {
 
-        if (!checkbox.checked) {
-            remainingTasks++;
-        }
+    //     if (!checkbox.checked) {
+    //         remainingTasks++;
+    //     }
+
+    
 
     });
 
