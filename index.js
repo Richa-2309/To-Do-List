@@ -1,4 +1,6 @@
+//importing the required things from other file or module
 
+//all things are added
 // Select required elements
 const addButton = document.querySelector("#push");
 const taskInput = document.querySelector("#taskInput");
