@@ -23,15 +23,7 @@ learning other tech as well like Javascript, nodejs
 - CSS
 - JAVASCRIPT
 
-## API Endpoints
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| GET | `/todo` | Get all todos |
-| GET | `/todo/{id}` | Get todo by ID |
-| POST | `/todo` | Create a new todo |
-| PUT | `/todo/{id}` | Update a todo |
-| DELETE | `/todo/{id}` | Delete a todo |
 
 ## Sample JSON
 
